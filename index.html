@@ -8,7 +8,11 @@
   <title>Parallax bkg</title>
 </head>
 <body>
-  <canvas id="canvas1"></canvas>
+  <div class="container">
+    <canvas id="canvas1"></canvas>
+    <p>Game Speed: <span id="gameSpeed"></span></p>
+    <input type="range" min="0" max="10" value="4" class="slider" id="gameSpeedRange">
+  </div>
 </body>
   <script src="script.js"></script>
 </html>

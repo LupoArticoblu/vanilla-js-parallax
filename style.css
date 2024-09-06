@@ -2,12 +2,20 @@ body{
   background: #000;
 }
 
-#canvas1{
+.container{
   position: absolute;
-  border: 1px solid #fff;
-  transform: translate(-50%,-50%);
+  width: 800px;
   top: 50%;
   left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 20px;
+}
+
+#canvas1{
+  position: relative;
   width: 800px;
   height: 700px;
+}
+p{
+  color: #fff;
 }

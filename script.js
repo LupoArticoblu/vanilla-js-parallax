@@ -22,9 +22,12 @@ backgroundLayer5.src = './backgrounds/layer-5.png';
 
 // let x = 0;
 // let x2 = 2400;
+const slider = document.getElementById('gameSpeedRange');
+slider.value = speedGame;
 
+const gameSpeed = document.getElementById('gameSpeed');
+gameSpeed.innerHTML = speedGame;
 
-/*==================Array==================== */
 
 
 /*==================Classi==================== */
@@ -84,6 +87,11 @@ const layer4 = new Layer(backgroundLayer4, 0.8);
 const layer5 = new Layer(backgroundLayer5, 1);
 
 /*==================Funzioni==================== */
+slider.addEventListener('change', function(event){
+  speedGame = event.target.value;
+  gameSpeed.innerHTML = speedGame;
+});
+
 function animate(){
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   
