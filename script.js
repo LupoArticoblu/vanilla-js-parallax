@@ -21,6 +21,7 @@ const backgroundLayer5 = new Image();
 backgroundLayer5.src = './backgrounds/layer-5.png';
 
 let x = 0;
+let x2 = 2400;
 
 /*==================Array==================== */
 
@@ -30,7 +31,13 @@ let x = 0;
 function animate(){
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   ctx.drawImage(backgroundLayer4, x, 0);
-  x--;
+  //quello che succede qui è letteralmente un avanzamento di frame canvas fino a che x non supera il valore di backgroundLayer4.width e ricomincia l'animazione, un modo per ovviare a questo problema è creare una nuova variabile che parta dalla fine del canvas visibile
+  if(x <= -2400) x = 2400
+  else x-= speedGame;
+
+  ctx.drawImage(backgroundLayer4, x2, 0);
+  if(x2 <= -2400) x2 = 2400
+  else x2-= speedGame;
 
   requestAnimationFrame(animate);
 };
